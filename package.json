@@ -1,0 +1,14 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "This is a weatherapp that calculates the actual amount of times it rains, compared to the amount of times wunderground API says it is likely to rain. I'll be doing statistics with the data I collect. I will also add other functionality later.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ameya Pednekar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
