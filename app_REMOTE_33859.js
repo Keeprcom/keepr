@@ -5,11 +5,15 @@ app.use(logger);
 
 var Twitter = require('twitter');
 var client = new Twitter({
-  // consumer_key: '',
-  // consumer_secret: '',
-  // access_token_key: '',
-  // access_token_secret: ''
+  consumer_key: '',
+  consumer_secret: '',
+  access_token_key: '',
+  access_token_secret: ''
 });
+
+app.set('view engine', 'ejs');
+
+// resonse.json(object here) serializes json to client
 
 app.get('/', function(req,res){
 	res.sendFile(__dirname + '/index.html');
@@ -34,6 +38,11 @@ app.get('/home/:query',function(req,res){
 		res.json(cleanString);
 	});	
 });
+
+app.get('/test',function(req,res){
+	res.render('index')
+});
+
 
 app.listen(3000, function (){
 console.log('listening on port 3000');
