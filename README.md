@@ -1,10 +1,13 @@
-<h3> Modules used:
+#Modules used:
 - express.js 
 
-<h3> Install
+#Install
 - npm install 
 
-<h3> query
+#Run
+- nodemon app.js
+
+#query
 - localhost:3000/home/query
   Where "query" is what you want to search for 
 
