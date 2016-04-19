@@ -5,10 +5,10 @@ app.use(logger);
 
 var Twitter = require('twitter');
 var client = new Twitter({
-  consumer_key: 'm92WpTmzACSHAS0uK5qA',
-  consumer_secret: 'M7twTg4YoC7NDpDJXzczFp2S4z3Ek2R33LUy9rKvMU',
-  access_token_key: '1386070296-zItk7uzA7sABC1R83kBAY5QKbWMUTdge6oCBgki',
-  access_token_secret: 'qsuaqgMKDE9pdyuY2186NoIfgOZPN95mg8UXZ77DgaI'
+  consumer_key: '',
+  consumer_secret: '',
+  access_token_key: '',
+  access_token_secret: ''
 });
 
 app.set('view engine', 'ejs');
