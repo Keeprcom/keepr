@@ -3,6 +3,8 @@ var app = express();
 var logger = require('./logger');
 app.use(logger);
 
+app.set('port', (process.env.PORT || 3000));
+
 var routes=require('./routes/twitter');
 
 app.get('/ping', function(req, res) {
