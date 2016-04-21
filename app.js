@@ -5,6 +5,9 @@ app.use(logger);
 
 var routes=require('./routes/twitter');
 
+app.get('/ping', function(req, res) {
+  res.send('SUCCESS');
+});
 app.get('/:query', routes.query);
 
 app.listen(3000, function (){
