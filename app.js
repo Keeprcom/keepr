@@ -7,11 +7,8 @@ app.set('port', (process.env.PORT || 3000));
 
 var routes=require('./routes/twitter');
 
-app.get('/ping', function(req, res) {
-  res.send('SUCCESS');
-});
 app.get('/:query', routes.query);
 
 app.listen(app.get('port'), function (){
-console.log('listening on port ' + app.get('port'));
+console.log('listening on port ' + app.get('port'));
 });
