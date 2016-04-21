@@ -15,7 +15,6 @@
 # Configuration
 Create a file `.bash` with this information
 ```
-```
 export CONSUMER_KEY=<CONSUMER_KEY>
 export CONSUMER_SECRET=<CONSUMER_SECRET>
 export ACCESS_TOKEN=<ACCESS_TOKEN>
