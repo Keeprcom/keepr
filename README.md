@@ -5,7 +5,7 @@
 - npm install 
 
 #Run
-- nodemon app.js
+- npm start
 
 #query
 - localhost:3000/home/query
