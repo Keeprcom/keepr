@@ -50,6 +50,6 @@ module.exports ={
 		console.log("-----------------------------")
 		}
 
-		res.json(ids);
+		res.json(cleanString);
 	});	
 } }

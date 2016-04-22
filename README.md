@@ -8,7 +8,7 @@
 - npm start
 
 #query
-- localhost:3000/home/query
+- localhost:3000/query
   Where "query" is what you want to search for 
 
 
