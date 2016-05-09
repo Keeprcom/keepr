@@ -1,5 +1,6 @@
 var functions=require('../lib/functions');
 var Twitter = require('twitter');
+var logger = require('../logger');
 
 var client = new Twitter({
   consumer_key: process.env.CONSUMER_KEY,
@@ -11,9 +12,10 @@ var client = new Twitter({
 module.exports ={
 	query: function(req,res){
 		client.get('search/tweets', {q: req.params.query, count:100}, function(err, data, response) {
-	   if (err) throw err;
+   
+   if (err) throw err;
+	  
 	  else {
-	  		
 	  		var ids = {numbers:[]};
 	  		var text = "";
 			  
@@ -24,7 +26,8 @@ module.exports ={
 		    		"text":item.text
 		    		});
 	    		text+=item.text;	   
-			}
+				}
+
 			var cleanString = text.replace(/[|$<>\\-\\()+,]/g, " ");
 			var words = []; 
 			var splitted = cleanString.split(" ");
@@ -34,22 +37,23 @@ module.exports ={
 			var urls=(String)(splitted).toLowerCase().match(urlExpression);
 			var unique_mentions=functions.uniq(mentions);
 			var unique_urls=functions.uniq(urls);
-				for(var i=0; i<splitted.length; i++) {
-			    	words[splitted[i]] = ( typeof words[splitted[i]] != 'undefined' ) ? words[splitted[i]]+=1 : 1;
-				}
+			
+			for(var i=0; i<splitted.length; i++) {
+		    	words[splitted[i]] = ( typeof words[splitted[i]] != 'undefined' ) ? words[splitted[i]]+=1 : 1;
+			}
 
 			var words_counter = 0
 				
-				for (key in words) {
-			  		words_counter++;
-			  		console.log(key+" : "+words[key]);
-				}
+			for (key in words) {
+		  		words_counter++;
+		  		console.log(key+" : "+words[key]);
+			}
 		console.log(unique_mentions);	
 		console.log(unique_urls);			
 		console.log("number of unique words: " +words_counter+ " total number of words: "+splitted.length) ;
 		console.log("-----------------------------")
 		}
 
-		res.json(cleanString);
+		res.json(ids);
 	});	
 } }
