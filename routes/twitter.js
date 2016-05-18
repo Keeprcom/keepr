@@ -11,7 +11,7 @@ var client = new Twitter({
 
 module.exports ={
 	query: function(req,res){
-		client.get('search/tweets', {q:req.params.query, from:'breakingnews OR bbcbreaking OR AP+BREAKING OR ReutersLive OR AJELive OR AFP+#BREAKING', result_type:'popular',exclude:'replies OR retweets', count:100}, function(err, data, response) {
+		client.get('search/tweets', {q:req.params.query , result_type:'popular',exclude:'replies OR retweets', count:100}, function(err, data, response) {
    
 		if (err) console.log(err);
 	  	
