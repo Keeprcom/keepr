@@ -12,7 +12,7 @@ var client = new Twitter({
 module.exports ={
 	query: function(req,res){
 		client.get('search/tweets', {q:req.params.query , result_type:'popular',exclude:'replies OR retweets', count:100}, function(err, data, response) {
-   
+			
 		if (err) console.log(err);
 	  	
 		  else {
