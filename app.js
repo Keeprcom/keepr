@@ -6,6 +6,10 @@ var routes=require('./routes/twitter');
 app.use(logger);
 app.set('port', (process.env.PORT || 3000));
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/keepr_users');
+var User     = require('./models/User');
+
 app.get('/ask/:query', routes.query);
 app.get('/latest', routes.latest);
 
