@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "*",
+    "mongoose": "^4.5.3",
     "twitter": "*"
   }
 }
