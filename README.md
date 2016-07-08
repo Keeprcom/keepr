@@ -1,3 +1,4 @@
+[![Code Climate](https://codeclimate.com/github/Keeprcom/keepr/badges/gpa.svg)](https://codeclimate.com/github/Keeprcom/keepr)
 #Modules used:
 - express.js 
 
