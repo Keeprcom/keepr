@@ -9,7 +9,7 @@ app.use(logger);
 app.set('port', (process.env.PORT || 3000));
 
 
-mongoose.connect('mongodb://localhost/keepr');
+//mongoose.connect('mongodb://localhost/keepr');
 
 
 app.get('/ask/:query', routes.query);
