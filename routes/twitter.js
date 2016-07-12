@@ -17,7 +17,7 @@ module.exports ={
 	  	
 		  else {
 		  		var ids = {numbers:[]};
-		  		// var text = "";
+		  		var text = "";
 				  
 				  for(var i in data.statuses){
 			  		var item = data.statuses[i];
@@ -26,7 +26,7 @@ module.exports ={
 			    		"text":item.text,
 			    		"urls":item.entities.urls
 			    		});
-		    		// text+=item.text;	   
+		    		text+=item.text;	   
 					}
 				var cleanString = text.replace(/[|$<>\\-\\()+,]/g, " ");
 				var words = []; 
