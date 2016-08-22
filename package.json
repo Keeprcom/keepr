@@ -10,8 +10,10 @@
   "author": "Ameya Pednekar",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "*",
-    "mongoose": "^4.5.3",
+    "forecast.io": "*",
+    "morgan": "^1.7.0",
     "twitter": "*"
   }
 }

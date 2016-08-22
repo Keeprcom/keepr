@@ -1,6 +1,5 @@
 var functions=require('../lib/functions');
 var Twitter = require('twitter');
-var logger = require('../logger');
 
 var client = new Twitter({
   consumer_key: process.env.CONSUMER_KEY,
@@ -9,8 +8,7 @@ var client = new Twitter({
   access_token_secret: process.env.ACCESS_TOKEN_SECRET
 });
 
-module.exports ={
-	query: function(req,res){
+module.exports.query = function(req,res){
 		client.get('search/tweets', {q:req.params.query , result_type:'popular',exclude:'replies OR retweets', count:100}, function(err, data, response) {
 			
 		if (err) console.log(err);
@@ -55,9 +53,9 @@ module.exports ={
 				}
 		res.json(ids);
 		});	
-	},
+	};
 
-	latest: function(req,res) {
+	module.exports.latest = function(req,res) {
 		client.get('search/tweets', {q:'breaking news', from:'breakingnews OR bbcbreaking OR AP+BREAKING OR ReutersLive OR AJELive OR AFP+#BREAKING', result_type:'popular', exclude:'replies OR retweets', count:100}, function(err, data, response) {
    
 		if (err) console.log(err);
@@ -78,5 +76,4 @@ module.exports ={
 				}
 		res.json(ids);
 		});	 
-	}
-}
+	};
